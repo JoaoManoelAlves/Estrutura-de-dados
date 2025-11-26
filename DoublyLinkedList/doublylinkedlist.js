@@ -13,16 +13,14 @@ class DoublyNode extends Node {
         this.previous = previous;
     }
 }
-class DoublyLinkedList extends LinkedList {
-    constructor(equalsFn = defaultEquals) {
+class DoublyLinkedList extends LinkedList{
+    constructor(equalsFn = defaultEquals){
         super(equalsFn);
         this.tail = undefined; //Além disso, precisamos manter também uma referência ao último elemento da lista (tail).
     }
-
-
     //Inserindo um novo elemento em qualquer posição: 
     // Na classe doublylinkedlist, iremos alterar o método inserir que conhecemos da LinkedList comum, pois além de controlar a propriedade next, temos a adição do ponteiro prev que indica o elemento anterior.
-
+    
     inserir(element, index) {
         if (index >= 0 && index <= this.count) {
             const node = new DoublyNode(element);
@@ -59,20 +57,17 @@ class DoublyLinkedList extends LinkedList {
     removeAt(index) {
         if (index >= 0 && index < this.count) {
             let current = this.head;
-        if (index === 0) {
-            this.head = current.next; 
-        if (this.count === 1) { // Se houver apenas um item atualiza-se o tail         
-            this.tail = undefined;
-        } else {
-            this.head.previous = undefined;
-}
-        } else if (index === this.count - 1) {
+            if (index === 0) {
+                this.head = current.next; 
+            }else if(this.count === 1) { // Se houver apenas um item atualiza-se o tail         
+                this.tail = undefined;
+            }else{
+                this.head.previous = undefined;
+            }
+        }else{
             current = this.tail;
             this.tail = current.previous; 
             this.tail.next = undefined; 
-
+        }
 }
-
-
-
-
+}
