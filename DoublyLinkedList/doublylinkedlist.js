@@ -55,6 +55,22 @@ class DoublyLinkedList extends LinkedList {
         }
         return false;
     }
+    
+    removeAt(index) {
+        if (index >= 0 && index < this.count) {
+            let current = this.head;
+        if (index === 0) {
+            this.head = current.next;         
+        if (this.count === 1) { 
+            this.tail = undefined;
+        } else {
+            this.head.previous = undefined;
+}
+        } else if (index === this.count - 1) {
+            current = this.tail;
+            this.tail = current.previous; 
+            this.tail.next = undefined; 
+
 }
 
 const listadupla = new DoublyLinkedList();
@@ -64,4 +80,5 @@ listadupla.inserir(3,2);
 listadupla.inserir(4,3);
 console.log(listadupla);
 console.log(listadupla.elementos());
+
 
