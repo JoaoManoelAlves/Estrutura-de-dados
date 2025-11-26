@@ -60,8 +60,8 @@ class DoublyLinkedList extends LinkedList {
         if (index >= 0 && index < this.count) {
             let current = this.head;
         if (index === 0) {
-            this.head = current.next;         
-        if (this.count === 1) { 
+            this.head = current.next; 
+        if (this.count === 1) { // Se houver apenas um item atualiza-se o tail         
             this.tail = undefined;
         } else {
             this.head.previous = undefined;
@@ -80,5 +80,6 @@ listadupla.inserir(3,2);
 listadupla.inserir(4,3);
 console.log(listadupla);
 console.log(listadupla.elementos());
+
 
 
