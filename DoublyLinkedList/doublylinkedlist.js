@@ -8,9 +8,9 @@ function defaultEquals(a, b) {
 }
 
 class DoublyNode extends Node {
-    constructor(element, next, prev) {
+    constructor(element, next, previous) {
         super(element, next);
-        this.prev = prev;
+        this.previous = previous;
     }
 }
 class DoublyLinkedList extends LinkedList {
@@ -33,22 +33,22 @@ class DoublyLinkedList extends LinkedList {
                     this.tail = node;
                 } else {
                     node.next = this.head;
-                    current.prev = node;
+                    current.previous = node;
                     this.head = node;
                 }
 
             } else if (index === this.count) {
                 current = this.tail;
                 current.next = node;
-                node.prev = current;
+                node.previous = current;
                 this.tail = node;
             } else {
                 const previous = this.getElementAt(index - 1);
                 current = previous.next;
                 node.next = current;
                 previous.next = node;
-                current.prev = node;
-                node.prev = previous;
+                current.previous = node;
+                node.previous = previous;
             }
             this.count++;
             return true;
@@ -64,3 +64,4 @@ listadupla.inserir(3,2);
 listadupla.inserir(4,3);
 console.log(listadupla);
 console.log(listadupla.elementos());
+
