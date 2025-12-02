@@ -70,4 +70,32 @@ class DoublyLinkedList extends LinkedList{
             this.tail.next = undefined; 
         }
 }
+ getNext(node) {
+    return node ? node.next : null;
+  }
+
+  getPrev(node) {
+    return node ? node.prev : null;
+
+
+                //Obrigatorios 
+  isEmpty() {
+    return this.count === 0;
+  }
+
+  size() {
+    return this.count;
+  }
+
+  clear() {
+    this.head = null;
+    this.tail = null;
+    this.count = 0;
+  }
+
+
+
+
+    
 }
+
