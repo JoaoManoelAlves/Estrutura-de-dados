@@ -111,7 +111,7 @@ class DoubleLinkedList {
 const doubleLinkedList = new DoubleLinkedList();
 doubleLinkedList.insertEnd(2);
 doubleLinkedList.insertEnd(3);
-doubleLinkedList.insertEnd(4);
+doubleLinkedList.insertEnd(5);
 doubleLinkedList.insertAnyWhere(3, 5);
 doubleLinkedList.insertEnd(99);
 doubleLinkedList.elementos();
