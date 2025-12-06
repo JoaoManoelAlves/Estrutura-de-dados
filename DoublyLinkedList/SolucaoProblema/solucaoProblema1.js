@@ -1,3 +1,3 @@
 import {DoubleLinkedList} from './ListaDuplamenteEncadeada.js';
 
-const listaTeste = new DoubleLinkedList();
+const playlistTeste = new DoubleLinkedList();
