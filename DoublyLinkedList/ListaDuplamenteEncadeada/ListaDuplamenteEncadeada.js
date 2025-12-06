@@ -11,7 +11,17 @@ class DoubleLinkedList {
         this.tail = null;
         this.count = 0;
     }
+    //inserir no inicio
+    insertFront(element) {
+        if (this.isEmpty()) return this.insertEnd(element);
+        const newNo = new NodeList(element);
+        newNo.next = this.head;
+        this.head.prev = newNo;
+        this.head = newNo;
+        this.count++;
+    }
 
+    //inserir no final
     insertEnd(element) {
         //Cria o novo nó
         const newNo = new NodeList(element);
@@ -32,14 +42,8 @@ class DoubleLinkedList {
         }
         this.count++;
     }
-    insertFront(element) {
-        if (this.isEmpty()) return this.insertEnd(element);
-        const newNo = new NodeList(element);
-        newNo.next = this.head;
-        this.head.prev = newNo;
-        this.head = newNo;
-        this.count++;
-    }
+
+    //inserir em qualquer lugar
     insertAnyWhere(index, element) {
         if (index < 0 || index > this.count) return undefined;
         if (index === 0) return this.insertFront(element);
