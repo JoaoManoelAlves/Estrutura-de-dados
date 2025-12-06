@@ -91,7 +91,7 @@ class DoubleLinkedList {
         this.count--;
         return removedNode.data;
     }
-    deleteAnyWhere(index) {//Deletará de qualquer nó
+    deleteAnyWhere(index) {//Deletará de qualquer nó através do índice
         // se o indice for menor que zero ou maior que o numero de elementos, retorna undefined
         if (index < 0 || index >= this.count) return undefined;
 
@@ -111,7 +111,7 @@ class DoubleLinkedList {
     }
 
     // MÉTODOS DE BUSCA:
-    indexOf(element){
+    indexOf(element){ //retorna a posição de determinado elemento
         let atual = this.head;
         let index = 0;
         while (atual != null){
@@ -124,7 +124,7 @@ class DoubleLinkedList {
         return -1;
     }
 
-    getNodeAt(index) {
+    getNodeAt(index) { //retorna o nó através do índice
         if (index < 0 || index >= this.count) return undefined;
         let atual = this.head;
         let i = 0;
