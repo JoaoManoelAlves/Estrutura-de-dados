@@ -33,13 +33,13 @@ class DoubleLinkedList {
         this.count++;
     }
     insertFront(element) {
-    if (this.isEmpty()) return this.insertEnd(element);
-    const newNo = new NodeList(element);
-    newNo.next = this.head;
-    this.head.prev = newNo;
-    this.head = newNo;
-    this.count++;
-}
+        if (this.isEmpty()) return this.insertEnd(element);
+        const newNo = new NodeList(element);
+        newNo.next = this.head;
+        this.head.prev = newNo;
+        this.head = newNo;
+        this.count++;
+    }
     insertAnyWhere(index, element) {
         if (index < 0 || index > this.count) return undefined;
         if (index === 0) return this.insertFront(element);
@@ -61,13 +61,65 @@ class DoubleLinkedList {
     }
     deleteFront() {
         //Deletará o primeiro nó
+        if (this.isEmpty()) return undefined;
+        const removedNode = this.head;
+        if (this.count === 1){
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = this.head.next;
+            this.head.prev = null;
+        }
+        this.count--;
+        return removedNode.data;
     }
     deleteBack() {
         //Deletará o ultimo nó
+        if (this.isEmpty()) return undefined;
+        const removedNode = this.tail;
+        if (this.count === 1){
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.tail = this.tail.prev;
+            this.tail.next = null;
+        }
+        this.count--;
+        return removedNode.data;
     }
-    deleteAnyWhere() {
-        //Deletará de qualquer nó
+    deleteAnyWhere(index) {//Deletará de qualquer nó
+        // se o indice for menor que zero ou maior que o numero de elementos, retorna undefined
+        if (index < 0 || index >= this.count) return undefined;
+
+        //reutilizando os metodos deleteFront e deleteBack
+        if (index === 0) return this.deleteFront();
+        if (index === this.count -1) return this.deleteBack();
+
+        const atual = this.getNodeAt(index);
+        const previous = atual.prev;
+
+        previous.next = atual.next;
+        atual.next.prev = previous;
+
+        this.count--;
+        return atual.data;
+
     }
+
+    // MÉTODOS DE BUSCA:
+    indexOf(element){
+        let atual = this.head;
+        let index = 0;
+        while (atual != null){
+            if(atual.data === element){
+                return index;
+            }
+            atual = atual.next;
+            index++;
+        }
+        return -1;
+    }
+
     getNodeAt(index) {
         if (index < 0 || index >= this.count) return undefined;
         let atual = this.head;
@@ -77,41 +129,44 @@ class DoubleLinkedList {
             i++;
         }
         return atual;
-}
+    }
     cabeca() {
         return this.head;
     }
     cauda() {
         return this.tail;
-}
+    }
     size() {
         return this.count;
-}
+    }
     isEmpty() {
         return this.count === 0;
-}
+    }
     clear() {
         this.head = null;
         this.tail = null;
         this.count = 0;
-}
+    }
     elementos() {
         let atual = this.head;
         let elementos = [];
         while (atual !== null) {
-            elementos.push(atual)
-            //elementos.push(atual.data)
-            //elementos.push("<=>");
+           // elementos.push(atual)
+            elementos.push(atual.data)
+            elementos.push("<=>");
             atual = atual.next;
         }
-        return console.log(elementos);
+        elementos.pop(); //remove a ultima seta solta
+        return console.log(elementos.join(" "));
     }
 }
 
 const doubleLinkedList = new DoubleLinkedList();
+doubleLinkedList.insertEnd(1);
 doubleLinkedList.insertEnd(2);
 doubleLinkedList.insertEnd(3);
+doubleLinkedList.insertAnyWhere(3,4);
 doubleLinkedList.insertEnd(5);
-doubleLinkedList.insertAnyWhere(3, 5);
-doubleLinkedList.insertEnd(99);
+doubleLinkedList.elementos();
+doubleLinkedList.deleteAnyWhere(4);
 doubleLinkedList.elementos();
