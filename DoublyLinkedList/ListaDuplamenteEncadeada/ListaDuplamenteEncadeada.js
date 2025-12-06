@@ -1,11 +1,11 @@
-class NodeList {
+export class NodeList {
     constructor(data) {
         this.data = data;
         this.next = null;
         this.prev = null;
     }
 }
-class DoubleLinkedList {
+export class DoubleLinkedList {
     constructor() {
         this.head = null;
         this.tail = null;
