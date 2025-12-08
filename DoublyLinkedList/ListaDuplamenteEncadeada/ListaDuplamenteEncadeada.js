@@ -180,10 +180,10 @@ getNodeAt(index) { //retorna o nó através do índice
 }
 
 //MÉTODOS ACESSÓRIOS: 
-cabeca() {
+head() {
     return this.head;
 }
-cauda() {
+tail() {
     return this.tail;
 }
 size() {
@@ -197,28 +197,4 @@ clear() {
     this.tail = null;
     this.count = 0;
 }
-elementos() {
-    let atual = this.head;
-    let elementos = [];
-    while (atual !== null) {
-        // elementos.push(atual)
-        elementos.push(atual.data);
-        elementos.push("<=>");
-        atual = atual.next;
-    }
-    elementos.pop(); //remove a ultima seta solta
-    return console.log(elementos.join(" "));
 }
-}
-
-const doubleLinkedList = new DoubleLinkedList();
-doubleLinkedList.insert(1);
-doubleLinkedList.insert(2);
-doubleLinkedList.insert(3);
-doubleLinkedList.insertAnyWhere(3, 4);
-doubleLinkedList.insert(5);
-console.log( Lista completa:);
-doubleLinkedList.elementos();
-doubleLinkedList.deleteAnyWhere(1)
-console.log( Depois de remover o objeto 1:);
-doubleLinkedList.elementos();
