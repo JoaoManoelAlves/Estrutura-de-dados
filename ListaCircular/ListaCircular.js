@@ -5,7 +5,7 @@ module.exports = class CircularLinkedList{
         this.head = null
         this.tail = null
         this.count = 0
-        this.noAtual = null
+        this.currentNode = null
     }
 
     insert(element){
@@ -13,7 +13,7 @@ module.exports = class CircularLinkedList{
         if(this.isEmpty()){
             this.head = newNo
             this.tail = newNo
-            this.noAtual = newNo
+            this.currentNode = newNo
             this.tail.next = this.head
         }else{
             this.tail.next = newNo
@@ -27,16 +27,16 @@ module.exports = class CircularLinkedList{
         if(this.isEmpty()) return;
 
         for(let i=0;i<steps;i++){
-            this.noAtual = this.noAtual.next
+            this.currentNode = this.currentNode.next
         }
-        return this.noAtual
+        return this.currentNode
     }
 
     current() {
-        if(this.noAtual == null){
+        if(this.currentNode == null){
             return undefined
         }else{
-            return this.noAtual.data
+            return this.currentNode.data
         }
     }
 
@@ -52,6 +52,6 @@ module.exports = class CircularLinkedList{
         this.head = null
         this.count = 0
         this.tail = null
-        this.noAtual = null
+        this.currentNode = null
     }
 }
