@@ -11,16 +11,23 @@ this.head = null;
 this.tail = null;
 this.count = 0;
 }
-
-//MÉTODOS DE INSERÇÃO:
-
+    
+//metódos de inserção
+    
 //inserir no inicio
-insertFront(element) {
+insertFront(element) 
+    //verifica se a lista está completamente vazia
+    {
     if (this.isEmpty()) return this.insert(element);
+//cria um nó novo que será colocado na frente:
     const newNo = new NodeList(element);
+// o nó que foi inserido passa a apontar para o nó que antes era a cabeça
     newNo.next = this.head;
+// o nó que era a cabeça antiga aponta de volta para o nó que entrou
     this.head.prev = newNo;
+//atualiza a cabeça da lista para ser o novo nó
     this.head = newNo;
+//incrementa o contador total de elementos que há na lista
     this.count++;
 }
 
