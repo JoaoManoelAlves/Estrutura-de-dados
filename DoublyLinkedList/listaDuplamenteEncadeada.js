@@ -141,43 +141,47 @@ remove(node) {
 }
 
 // MÉTODOS DE NAVEGAÇÃO:
-getNext(node) {
+getNext(node) { 
+                        //dupla verificação de parametros: se o nó informado existe e se ele tem um próximo vizinho (next)
     if (node && node.next) {
-        return node.next;
+        return node.next; //caso os dois parametros sejam verdadeiros, retorna o vizinho
     }
-    return null;
+    return null;            //caso um dos parametros seja falso, retorna null
 }
 getPrev(node) {
-    if (node && node.prev) {
+    if (node && node.prev) {//retorna o vizinho anterior ao nó caso os parametros sejam verdadeiros
         return node.prev;
     }
     return null;
 }
 
 // MÉTODOS DE BUSCA:
-indexOf(element) { //retorna a posição de determinado elemento
-    let atual = this.head;
-    let index = 0;
-    while (atual != null) {
-        if (atual.data === element) {
-            return index;
+indexOf(element) {             //retorna a posição de determinado elemento
+    let atual = this.head;     //atual serve como ponteiro que recebe o valor de head
+    let index = 0;             //contador que representa o indice
+    while (atual != null) {    //loop criado pra percorrer a lista enquanto atual for diferente de null
+        if (atual.data === element) { //se o valor de atual for igual ao valor do elemento digitado
+            return index;       //o loop termina e retorna o valor do contador/indice
         }
-        atual = atual.next;
-        index++;
+        atual = atual.next;     //se a condição acima nao for satisfeita, a variavel atual recebe 
+        index++;                //o valor do próximo vizinho (next) e o contador soma +1. o loop repete.
     }
-    return -1;
+    return null;                //retorna null caso o loop não encontre um item igual ao solicitado na lista.
 }
 
-getNodeAt(index) { //retorna o nó através do índice
+getNodeAt(index) {              //retorna o nó através do índice
+    //se o indice solicitado for menor que zero e maior/igual ao tamanho da lista, retorna undefined, pois esse indice nao existe
     if (index < 0 || index >= this.count) return undefined;
-    let atual = this.head;
-    let i = 0;
-    while (i < index) {
-        atual = atual.next;
-        i++;
+    
+    let atual = this.head; //atual serve como ponteiro que recebe o valor de head
+    let i = 0; //contador
+    while (i < index) { //loop: enquanto o contador for menor que o indice solicitado
+        atual = atual.next; //avança para o proximo nó
+        i++; //acrescenta +1 ao contador
     }
-    return atual;
-}
+    //quando o loop para, significa que o ponteiro atual está posicionado no nó do indice solicitado
+    return atual; //retorna o nó inteiro
+}                 
 
 //MÉTODOS ACESSÓRIOS: 
 head() {
