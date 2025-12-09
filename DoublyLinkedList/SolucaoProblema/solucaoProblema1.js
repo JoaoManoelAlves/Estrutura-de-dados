@@ -35,7 +35,9 @@ export class MusicPlaylist {
       console.log(`Voltou para a música ${this.currentSong.data}`);
     } else {
       console.log("Você já está na última música.")
-
+    }
+  }
+  
   //retornar o nome da música atual
   current() {
         if (this.currentSong) {
@@ -68,6 +70,16 @@ export class MusicPlaylist {
         this.playlist.clear();
         this.currentSong = null;
     }
+
+    showPlaylist(){
+        console.log(this.lista.elementos())
+        if(this.actualSong) return console.log(`Tocando agora: ${this.actualSong.data}`)
+    }
+    size(){
+        return this.lista.size()
+    }
+    isEmpty(){
+        return this.lista.isEmpty()
+    }
+      
   }
-}
-}
