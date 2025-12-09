@@ -69,31 +69,31 @@ insertAnyWhere(index, element) {
 //MÉTODOS DE REMOÇÃO:
 
 deleteFront() {
-    //Deletará o primeiro nó
-    if (this.isEmpty()) return undefined;
+    //Pra deletar o primeiro nó
+    if (this.isEmpty()) return undefined; //Se a lista estiver vazia retorna undefined
     const removedNode = this.head;
-    if (this.count === 1) {
+    if (this.count === 1) { //Se o count for apenas 1, o head e tail recebem Nulls
         this.head = null;
         this.tail = null;
-    } else {
-        this.head = this.head.next;
-        this.head.prev = null;
+    } else { //O head agora recebe o next do head
+        this.head = this.head.next; 
+        this.head.prev = null; //O previous do head agora é Null 
     }
-    this.count--;
+    this.count--; //O count vai diminuindo conforme os elementos são removidos
     return removedNode.data;
 }
 deleteBack() {
-    //Deletará o ultimo nó
-    if (this.isEmpty()) return undefined;
+    //Pra deletar o ultimo nó
+    if (this.isEmpty()) return undefined; //Se a lista estiver vazia retorna undefined
     const removedNode = this.tail;
-    if (this.count === 1) {
+    if (this.count === 1) { //Se o count for apenas 1 Head e tail recebem Nulls
         this.head = null;
         this.tail = null;
-    } else {
+    } else { //Tail recebe o Previous do Tail
         this.tail = this.tail.prev;
-        this.tail.next = null;
+        this.tail.next = null; //Next do Tail agora é Null
     }
-    this.count--;
+    this.count--; //Count vai diminuindo conforme os elementos são removidos
     return removedNode.data;
 }
 deleteAnyWhere(index) {//Deletará de qualquer nó através do índice
@@ -183,19 +183,19 @@ getNodeAt(index) {              //retorna o nó através do índice
 }                 
 
 //MÉTODOS ACESSÓRIOS: 
-head() {
+head() { //Retorna o head
     return this.head;
 }
-tail() {
+tail() { //Retorna tail
     return this.tail;
 }
-size() {
+size() { //Retorna o tamanho da lista, ou seja o Count 
     return this.count;
 }
-isEmpty() {
+isEmpty() { //Verifica se a lista está vazia
     return this.count === 0;
 }
-clear() {
+clear() { //Limpa toda a lista, transformando o head e tail em Nulls e limpando o Count (assim como no início da lista no constructor)
     this.head = null;
     this.tail = null;
     this.count = 0;
