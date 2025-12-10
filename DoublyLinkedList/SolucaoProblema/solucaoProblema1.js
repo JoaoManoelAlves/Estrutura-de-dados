@@ -76,7 +76,7 @@ export class MusicPlaylist {
         if (this.currentSong) return console.log(`Tocando agora: ${this.currentSong.data}`);
     }
     size() {
-        return this.playlist.size();
+        return console.log(`A Playlist possui ${this.playlist.size()} músicas.`); 
     }
     isEmpty() {
         return this.playlist.isEmpty();
