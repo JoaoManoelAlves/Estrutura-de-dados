@@ -81,8 +81,10 @@ export class MusicPlaylist {
             this.playlist.elementos();
             return console.log(`Tocando agora: ${this.currentSong.data}`);
         } else{
-             return console.log(`Número de músicas: ${this.playlist.size()}`);
+            console.log("Nenhuma música tocando")
         }
+         console.log(`Total de músicas: ${this.playlist.size()}`);
+        
     }
     
     size() {
