@@ -1,4 +1,4 @@
-const listaLinkadaCircular = require('./CircularlinkedList.js')
+const listaLinkadaCircular = require('./ListaCircular.js')
 
 module.exports = class Roulette{
     constructor(){
