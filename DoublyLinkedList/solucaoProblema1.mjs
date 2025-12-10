@@ -35,7 +35,7 @@ export class MusicPlaylist {
             this.currentSong = this.currentSong.prev;
             console.log(`Voltou para a música ${this.currentSong.data}`);
         } else {
-            console.log("Você já está na última música.");
+            console.log("Você já está na primeira música.");
         }
     }
 
