@@ -9,7 +9,7 @@ doubleLinkedList.insertAnyWhere(3,4);
 doubleLinkedList.insertEnd(5);
 doubleLinkedList.elementos();
 doubleLinkedList.deleteAnyWhere(4);
-doubleLinkedList.elementos();*/
+doubleLinkedList.elementos();
 
 // Testes da PlayList de Músicas
 const PlayList = new MusicPlaylist()
