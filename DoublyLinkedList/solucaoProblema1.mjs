@@ -71,7 +71,7 @@ export class MusicPlaylist {
         this.currentSong = null;
     }
 
-    showPlaylist() {
+    showPlaylist() { //retorna todas as musicas da playlist e qual está tocando no momento
         this.playlist.elementos();
         if (this.currentSong) return console.log(`Tocando agora: ${this.currentSong.data}`);
     }
