@@ -1,7 +1,8 @@
-const doubleLinkedlist  = require("./DoubleLinkedList.mjs")
-const playList = require("./solucaoProblema1.mjs")
+import { DoubleLinkedList } from "./ListaDuplamenteEncadeada.mjs";
+import { MusicPlaylist } from "./solucaoProblema1.mjs";
+
 // Testes da lista Duplamente Linkada Normal
-const doubleLinkedList = new doubleLinkedlist();
+const doubleLinkedList = new DoubleLinkedList();
 doubleLinkedList.insertEnd(1);
 doubleLinkedList.insertEnd(2);
 doubleLinkedList.insertEnd(3);
