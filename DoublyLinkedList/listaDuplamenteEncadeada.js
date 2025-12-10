@@ -207,4 +207,16 @@ clear() { //Limpa toda a lista, transformando o head e tail em Nulls e limpando 
     this.tail = null;
     this.count = 0;
 }
+ elementos() { //o método elementos() auxilia a depuração criando um array que guarda os valores adicionados na lista dupla
+        let atual = this.head;
+        let elementos = [];
+        while (atual !== null) {
+            // elementos.push(atual)
+            elementos.push(atual.data);
+            elementos.push("<=>");
+            atual = atual.next;
+        }
+        elementos.pop(); //remove a ultima seta solta
+        return console.log(elementos.join(" "));
+    }
 }
