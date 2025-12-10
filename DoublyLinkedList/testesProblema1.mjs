@@ -3,11 +3,11 @@ import { MusicPlaylist } from "./solucaoProblema1.mjs";
 
 // Testes da lista Duplamente Linkada Normal
 const doubleLinkedList = new DoubleLinkedList();
-doubleLinkedList.insertEnd(1);
-doubleLinkedList.insertEnd(2);
-doubleLinkedList.insertEnd(3);
+doubleLinkedList.insert(1);
+doubleLinkedList.insert(2);
+doubleLinkedList.insert(3);
 doubleLinkedList.insertAnyWhere(3,4);
-doubleLinkedList.insertEnd(5);
+doubleLinkedList.insert(5);
 doubleLinkedList.elementos();
 doubleLinkedList.deleteAnyWhere(4);
 doubleLinkedList.elementos();
