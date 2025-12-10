@@ -9,7 +9,8 @@ export class MusicPlaylist {
     //adicionar música
     addSong(title) {
         this.playlist.insert(title);
-
+        console.log(`${title} foi adicionada à playlist.`)
+        
         //se for a primeira musica ela se torna a atual
         if (this.currentSong === null) {
             this.currentSong = this.playlist.head;
