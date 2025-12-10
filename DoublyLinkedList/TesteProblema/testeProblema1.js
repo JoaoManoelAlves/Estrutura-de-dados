@@ -1,4 +1,4 @@
-const doubleLinkedlist  = require("./DoubleLinkedList.js")
+const doubleLinkedlist  = require("./DoubleLinkedList.mjs")
 const playList = require("./solucaoProblema1.js")
 // Testes da lista Duplamente Linkada Normal
 const doubleLinkedList = new doubleLinkedlist();
