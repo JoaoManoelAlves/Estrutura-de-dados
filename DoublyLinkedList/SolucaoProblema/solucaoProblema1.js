@@ -72,11 +72,11 @@ export class MusicPlaylist {
     }
 
     showPlaylist() {
-        console.log(this.playlist.elementos());
+        this.playlist.elementos();
         if (this.currentSong) return console.log(`Tocando agora: ${this.currentSong.data}`);
     }
     size() {
-        return console.log(`A Playlist possui ${this.playlist.size()} músicas.`); 
+        return this.playlist.size(); 
     }
     isEmpty() {
         return this.playlist.isEmpty();
