@@ -55,13 +55,17 @@ export class MusicPlaylist {
         let prevNode = nodeToRemove.prev;
 
         this.playlist.remove(nodeToRemove);
+        console.log(`A música "${nodeToRemove.data}" foi removida da playlist.`);
 
         if (nextNode) {
             this.currentSong = nextNode;
+            console.log(`Tocando agora: ${this.currentSong.data}`);
         } else if (prevNode) {
             this.currentSong = prevNode;
+            console.log(`Tocando agora: ${this.currentSong.data}`);
         } else {
             this.currentSong = null;
+            console.log("A playlist ficou vazia.");
         }
     }
 
