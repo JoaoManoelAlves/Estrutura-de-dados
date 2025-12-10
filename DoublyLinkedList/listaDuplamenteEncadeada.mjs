@@ -149,8 +149,8 @@ remove(node) {
 
 // MÉTODOS DE NAVEGAÇÃO:
 getNext(node) { 
-                                //dupla verificação de parametros: se o nó informado existe e se ele tem um próximo vizinho (next)
-    if (node && node.next) {
+                                
+    if (node && node.next) {    //dupla verificação de parametros: se o nó informado existe e se ele tem um próximo vizinho (next)
         return node.next;       //caso os dois parametros sejam verdadeiros, retorna o vizinho
     }
     return null;                //caso um dos parametros seja falso, retorna null
@@ -177,7 +177,7 @@ indexOf(element) {              //retorna a posição de determinado elemento
 }
 
 getNodeAt(index) {              //retorna o nó através do índice
-    if (index < 0 || index >= this.count) return undefined;  //se o indice solicitado for menor que zero e maior/igual ao tamanho da lista, retorna undefined, pois esse indice nao existe
+    if (index < 0 || index >= this.count) return undefined;  // dupla verificação: se o indice solicitado for menor que zero OU maior/igual ao tamanho da lista, retorna undefined, pois esse indice nao existe
     
     let atual = this.head;      //atual serve como ponteiro que recebe o valor de head
     let i = 0;                  //contador
