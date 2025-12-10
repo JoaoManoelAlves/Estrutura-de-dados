@@ -1,5 +1,5 @@
-const listaLinkadaCircular = require('./CircularlinkedList.js')
-const Roulette = require('./soluçãoProblema2.js')
+const listaLinkadaCircular = require('./ListaCircular.js')
+const Roulette = require('./solucaoProblema2.js')
 
 console.log("=====Teste Lista Circular=====")
 const listaCircular = new listaLinkadaCircular
