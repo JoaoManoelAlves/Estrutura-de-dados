@@ -207,7 +207,7 @@ clear() { //Limpa toda a lista, transformando o head e tail em Nulls e limpando 
     this.tail = null;
     this.count = 0;
 }
- elementos() { //o método elementos() auxilia a depuração criando um array que guarda os valores adicionados na lista dupla
+elementos() { //o método elementos() auxilia na depuração criando um array que guarda os valores adicionados na lista dupla
         let atual = this.head;
         let elementos = [];
         while (atual !== null) {
@@ -217,6 +217,6 @@ clear() { //Limpa toda a lista, transformando o head e tail em Nulls e limpando 
             atual = atual.next;
         }
         elementos.pop(); //remove a ultima seta solta
-        return console.log(elementos.join(" "));
+        return console.log(`Músicas na playlist: ${elementos.join(" ")}`);
     }
 }
